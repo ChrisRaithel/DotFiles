@@ -1,0 +1,19 @@
+mpd_host = "127.0.0.1"
+mpd_port = "6600"
+mpd_music_dir = "/home/chris/Music"
+audio_output {
+	type "pulse"
+	name "Pulse Output"
+	server "localhost"
+}
+audio_output {
+	type "fifo"
+	name "FIFO"
+	path "/tmp/mpd.fifo"
+	format "44100:16:1"
+}
+visualizer_sync_interval = "30"
+visualizer_type = "spectrum"
+visualizer_look = "+#"
+progressbar_color = "cyan"
+progressbar_look = "->"

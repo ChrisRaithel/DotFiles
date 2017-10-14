@@ -1,0 +1,8 @@
+!Config file for Xresources/URxvt
+
+URxvt.font: xft:TerminessTTF Nerd Font Mono-10
+URxvt*depth: 32
+URxvt*background: rgba:0000/0000/0200/c800
+URxvt.scrollBar: false
+*foreground: #ffffff
+*background: #000000

@@ -3,7 +3,11 @@ define slope(x1,y1,x2,y2) {
 	print x2-x1;
 };
 define intercept(x1,y1,slope) {
+	local backup = config("all");
+
 	config("mode","frac");
 	print "Y = " : slope : "x + " : slope*(-x1)+y1;
 	config("mode","real");
+
+	config("all", backup);
 };

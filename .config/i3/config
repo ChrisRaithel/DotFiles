@@ -14,12 +14,16 @@ exec --no-startup-id feh --bg-center ~/.config/i3/background.jpg
 # Background processes
 exec --no-startup-id mpd ~/.config/mpd/mpd.conf #Mpd music player
 exec --no-startup-id xset -b #Disable beeping for Xorg
-exec --no-startup-id compton --no-fading-openclose #Start window compositor, no fading on open or closing windows
+exec --no-startup-id compton --no-fading-openclose --vsync opengl #Start window compositor, no fading on open or closing windows
+
+# Bind extra audio keys
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
 
 # i3-gaps setup
 for_window [class="^.*"] border pixel 0
 gaps inner 10
-gaps outer 10
+gaps outer 5
 
 # Scratchpad terminal
 for_window [instance="sterm"] floating enable
@@ -41,6 +45,9 @@ bindsym $mod+t [instance="scalc"] scratchpad show, move position center
 
 # i3lock bind
 bindsym $mod+shift+s exec --no-startup-id i3lock -e
+
+# Screenshoter bind
+bindsym Print exec deepin-screenshot -s "/home/chris/Documents/Screenshots"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

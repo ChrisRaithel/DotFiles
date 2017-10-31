@@ -66,6 +66,9 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 
+" Set default for .tex extension
+let g:tex_flavor = "latex"
+
 let mapleader = "," "Set leader for upcoming commands
 
 "Update current vim session with new config

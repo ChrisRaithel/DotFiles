@@ -1,13 +1,22 @@
 define slope(x1,y1,x2,y2) {
-	print y2-y1;
-	print x2-x1;
+	local backup = config("all");
+	config("mode","frac");
+	print (y2-y1)/(x2-x1);
+	config("all", backup);
 };
+
+define iform(x1,y1,x2,y2) {
+	local backup = config("all");
+	config("mode","frac");
+	local slope=(y2-y1)/(x2-x1);
+	local intercept=slope*(-x1)+y1;
+	print "Y = " : slope : "x + " : intercept;
+	config("all",backup);
+}
+
 define intercept(x1,y1,slope) {
 	local backup = config("all");
-
 	config("mode","frac");
 	print "Y = " : slope : "x + " : slope*(-x1)+y1;
-	config("mode","real");
-
 	config("all", backup);
 };

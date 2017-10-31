@@ -14,6 +14,6 @@ audio_output {
 }
 visualizer_sync_interval = "30"
 visualizer_type = "spectrum"
-visualizer_look = "+#"
+visualizer_look = "##"
 progressbar_color = "cyan"
 progressbar_look = "->"

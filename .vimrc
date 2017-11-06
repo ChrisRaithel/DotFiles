@@ -25,6 +25,7 @@ filetype on "Enable filetype processing
 filetype plugin on "Enable filetype plugin
 colorscheme molokai "Current colorscheme
 hi Normal ctermbg=none "Prevents colorscheme from changing background (Transparencies sake)
+"hi LineNr ctermbg=none
 
 "Plugins
 filetype on "Enable filetype processing

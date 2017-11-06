@@ -6,3 +6,4 @@ URxvt*background: rgba:0000/0000/0200/c800
 URxvt.scrollBar: false
 *foreground: #ffffff
 *background: #000000
+URxvt.saveLines: 100

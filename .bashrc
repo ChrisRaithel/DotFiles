@@ -13,3 +13,5 @@ alias config='/usr/bin/git --git-dir=/home/chris/Documents/MyConf --work-tree=/h
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 for (( i=1; i<=$LINES; i++ )); do echo; done; clear
+
+clear

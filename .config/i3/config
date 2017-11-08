@@ -9,10 +9,13 @@ set $term urxvt
 font pango: FontAwesome 7.5
 
 # Background image
-exec --no-startup-id feh --bg-center ~/.config/i3/background.jpg
+exec --no-startup-id feh --bg-fill ~/.config/i3/background.jpg
 
 # Polybar status bar
 exec_always --no-startup-id sh ~/.config/polybar/launch.sh
+
+# Network manager applet
+exec nm-applet
 
 # Background processes
 exec --no-startup-id mpd ~/.config/mpd/mpd.conf #Mpd music player

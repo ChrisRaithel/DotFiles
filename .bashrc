@@ -14,4 +14,5 @@ PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 for (( i=1; i<=$LINES; i++ )); do echo; done; clear
 
-clear
+alias ranger='ranger --choosedir=/tmp/rangerdir; LASTDIR=`cat /tmp/rangerdir`; cd "$LASTDIR"'
+alias r=ranger

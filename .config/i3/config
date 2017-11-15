@@ -65,12 +65,15 @@ bindsym $mod+Return exec $term
 #kill focused window
 bindsym $mod+q kill
 
+# Start rofi (dmenu replacement)
+bindsym $mod+s exec rofi -show run
+
 # start firefox
 bindsym $mod+b exec firefox
 # start ranger
 bindsym $mod+n exec $term -e ranger
-# start htop
-bindsym $mod+m exec $term -e htop
+# start thunderbird email
+bindsym $mod+m exec thunderbird
 # start ncmpcpp
 bindsym $mod+h exec $term -e ncmpcpp
 # start gimp

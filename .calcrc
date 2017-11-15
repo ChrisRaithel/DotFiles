@@ -20,3 +20,16 @@ define intercept(x1,y1,slope) {
 	print "Y = " : slope : "x + " : slope*(-x1)+y1;
 	config("all", backup);
 };
+
+define midpoint(x1,y1,x2,y2) {
+	local backup = config("all");
+	print (x1+x2)/2;
+	print (y1+y2)/2;
+	config("all", backup);
+};
+
+define linedistance(x1,y1,x2,y2) {
+	local backup = config("all");
+	print sqrt((x2-x1)^2+(y2-y1)^2);
+	config("all", backup);
+};

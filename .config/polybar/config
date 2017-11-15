@@ -362,7 +362,7 @@ time-format = %H:%M
 
 format-charging = <label-charging>
 format-charging-underline = #ffb52a
-label-charging = "CHR %percentage%%"
+label-charging = "CHR %percentage%% %time%"
 
 format-discharging = <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}

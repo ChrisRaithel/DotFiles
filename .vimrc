@@ -35,6 +35,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'kien/ctrlp.vim'
+	Plug 'tpope/vim-surround'
 call plug#end()
 
 "Plugin configuration
@@ -76,13 +77,9 @@ let mapleader = "," "Set leader for upcoming commands
 nnoremap <leader>S :source ~/.vimrc<cr>
 "Force write
 nnoremap <leader>w :w!<cr>
-"Sudo write (for readonly files)
-command! W w !sudo tee % > /dev/null
 "Exit vim if file isnt edited
 nnoremap <leader>q :q<cr>
 "Force exit
 nnoremap <leader>Q :q!<cr>
 "Turn off search highlights from hlsearch
 nnoremap <leader>s :noh<cr>
-"Toggle folds
-nnoremap <leader>f za

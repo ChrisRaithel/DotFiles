@@ -45,8 +45,8 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 2
 
-font-0 = FontAwesome:pixelsize=8.3;2
-font-1 = Terminess TTF Nerd Font Mono:pixelsize=17;3
+font-0 = FontAwesome:pixelsize=10;2
+font-1 = Terminess TTF Nerd Font Mono:pixelsize=20;3
 
 modules-left = i3
 modules-center = mpd

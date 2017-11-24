@@ -18,6 +18,7 @@ alias ranger='ranger --choosedir=/tmp/rangerdir; LASTDIR=`cat /tmp/rangerdir`; c
 alias r=ranger
 
 alias ipython='ipython --TerminalInteractiveShell.highlighting_style="monokai";'
+alias diskusage=df
 
 #Prompt colors and stuff
 Red='\033[01;31m\]'
@@ -40,9 +41,11 @@ finale="${Reset}\$ "
 #PS1="${bracket1}${username}${at}${host}${bracket2}${finale}"
 
 #Cool PS1
-username="${Cyan}\u"
+username="${Blue}\u"
+at="${Green}@"
+host2="${Blue}\h"
 path="${Reset}\w"
 bolt="${Yellow}⚡"
 
-PS1="${username} ${path}${Reset}\n└─${bolt}${Reset} "
-#─│└
+#PS1="${username} ${path}${Reset}\n└─${bolt}${Reset} "
+#PS1="[\u@\h \w]\n└─${bolt}${Reset} "

@@ -15,7 +15,7 @@ exec --no-startup-id feh --bg-fill ~/.config/i3/background.jpg
 exec_always --no-startup-id sh ~/.config/polybar/launch.sh
 
 # Network manager applet
-exec nm-applet
+exec --no-startup-id nm-applet
 
 # Background processes
 exec --no-startup-id mpd ~/.config/mpd/mpd.conf #Mpd music player

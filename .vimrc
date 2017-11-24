@@ -82,4 +82,4 @@ nnoremap <leader>q :q<cr>
 "Force exit
 nnoremap <leader>Q :q!<cr>
 "Turn off search highlights from hlsearch
-nnoremap <leader>s :noh<cr>
+nnoremap <leader>s :nohlsearch<cr>

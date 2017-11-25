@@ -35,7 +35,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'kien/ctrlp.vim'
-	Plug 'tpope/vim-surround'
+	Plug 'airblade/vimgutter'
+	Plug 'scrooloose/syntastic'
 call plug#end()
 
 "Plugin configuration
@@ -70,6 +71,10 @@ let g:airline_symbols.readonly = ''
 
 " Set default for .tex extension
 let g:tex_flavor = "latex"
+
+" Controversial bindings, but makes vim much easier to use
+nnoremap E $
+nnoremap B 0
 
 let mapleader = "," "Set leader for upcoming commands
 

@@ -19,8 +19,10 @@ set directory=~/.vim-tmp "Directory to store .swp files (Similar to backups"
 set writebackup "Make backup before writing file
 set clipboard=unnamedplus "Set vim clipboard to system clipboard (For copy and paste)
 set ttimeoutlen=50 "Update vim-airline faster when switching modes
-set splitbelow
+set splitbelow "Make new splits appear below the current window and to the right
 set splitright
+set sessionoptions-=options "Disable recording options when saving sessions, fixes highlighting issues
+
 
 syntax enable "Enable syntax processing and coloring
 filetype on "Enable filetype processing
@@ -113,3 +115,6 @@ noremap <C-J> <C-W><C-J>
 noremap <C-K> <C-W><C-K>
 noremap <C-L> <C-W><C-L>
 noremap <C-H> <C-W><C-H>
+
+"Heres one to start control-p in buffer mode, because screw bufferline!
+nnoremap <C-D> :CtrlPBuffer<cr>

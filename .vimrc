@@ -19,6 +19,8 @@ set directory=~/.vim-tmp "Directory to store .swp files (Similar to backups"
 set writebackup "Make backup before writing file
 set clipboard=unnamedplus "Set vim clipboard to system clipboard (For copy and paste)
 set ttimeoutlen=50 "Update vim-airline faster when switching modes
+set splitbelow
+set splitright
 
 syntax enable "Enable syntax processing and coloring
 filetype on "Enable filetype processing
@@ -35,18 +37,20 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'kien/ctrlp.vim'
-	Plug 'airblade/vimgutter'
 	Plug 'scrooloose/syntastic'
 call plug#end()
 
 "Plugin configuration
 "Airline
+
+let g:airline#extensions#tabline#enabled = 0
+
 let g:airline_theme='bubblegum'
 let g:airline_powerline_fonts = 1
 let g:airline_symbols_ascii = 1
 
 if !exists('g:airline_symbols')
-		let g:airline_symbols = { }
+	let g:airline_symbols = { }
 endif
 
 let g:airline_skip_empty_sections = 1
@@ -72,7 +76,22 @@ let g:airline_symbols.readonly = ''
 " Set default for .tex extension
 let g:tex_flavor = "latex"
 
-" Controversial bindings, but makes vim much easier to use
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_mode_map = {
+	\ "mode": "active",
+	\ "passive_filetypes": ["tex"] }
+
+
+"Controversial bindings
 nnoremap E $
 nnoremap B 0
 
@@ -81,10 +100,16 @@ let mapleader = "," "Set leader for upcoming commands
 "Update current vim session with new config
 nnoremap <leader>S :source ~/.vimrc<cr>
 "Force write
-nnoremap <leader>w :w!<cr>
+nnoremap <leader>w :w<cr>
 "Exit vim if file isnt edited
 nnoremap <leader>q :q<cr>
 "Force exit
 nnoremap <leader>Q :q!<cr>
 "Turn off search highlights from hlsearch
 nnoremap <leader>s :nohlsearch<cr>
+
+"Buncha binds to switching between splits easier
+noremap <C-J> <C-W><C-J>
+noremap <C-K> <C-W><C-K>
+noremap <C-L> <C-W><C-L>
+noremap <C-H> <C-W><C-H>

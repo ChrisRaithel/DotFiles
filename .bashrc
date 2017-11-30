@@ -18,7 +18,6 @@ alias ranger='ranger --choosedir=/tmp/rangerdir; LASTDIR=`cat /tmp/rangerdir`; c
 alias r=ranger
 
 alias ipython='ipython --TerminalInteractiveShell.highlighting_style="monokai";'
-alias diskusage=df
 
 #Prompt colors and stuff
 Red='\033[01;31m\]'

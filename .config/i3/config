@@ -74,6 +74,8 @@ bindsym $mod+b exec firefox
 bindsym $mod+n exec $term -e ranger
 # start thunderbird email
 bindsym $mod+m exec thunderbird
+# start htop
+bindsym $mod+shift+m exec $term -e htop
 # start ncmpcpp
 bindsym $mod+h exec $term -e ncmpcpp
 # start gimp

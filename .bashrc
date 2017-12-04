@@ -17,8 +17,6 @@ for (( i=1; i<=$LINES; i++ )); do echo; done; clear
 alias ranger='ranger --choosedir=/tmp/rangerdir; LASTDIR=`cat /tmp/rangerdir`; cd "$LASTDIR"'
 alias r=ranger
 
-alias ipython='ipython --TerminalInteractiveShell.highlighting_style="monokai";'
-
 #Prompt colors and stuff
 Red='\033[01;31m\]'
 Green='\033[01;32m\]'

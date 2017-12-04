@@ -50,7 +50,7 @@ exec $term -name scalc -fn "xft:TerminessTTF Nerd Font Mono-14"  -e calc -c "-d"
 bindsym $mod+t [instance="scalc"] scratchpad show, move position center
 
 # i3lock bind
-bindsym $mod+shift+s exec --no-startup-id i3lock -e
+bindsym $mod+shift+s exec --no-startup-id i3lock -e -i ~/.config/i3/lock.png
 
 # Scrot screenshoter bind
 #bindsym Print exec scrot -s -e 'mv $f ~/Documents/Screenshots'
@@ -65,7 +65,7 @@ bindsym $mod+Return exec $term
 #kill focused window
 bindsym $mod+q kill
 
-# Start rofi (dmenu replacement)
+# Start rofi (dmenu replacement), used for gimp, pinball, etc.
 bindsym $mod+s exec rofi -show run
 
 # start firefox
@@ -78,8 +78,6 @@ bindsym $mod+m exec thunderbird
 bindsym $mod+shift+m exec $term -e htop
 # start ncmpcpp
 bindsym $mod+h exec $term -e ncmpcpp
-# start gimp
-bindsym $mod+g exec gimp
 
 # change focus
 bindsym $mod+j focus left

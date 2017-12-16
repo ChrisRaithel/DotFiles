@@ -14,35 +14,16 @@ PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 for (( i=1; i<=$LINES; i++ )); do echo; done; clear
 
-alias ranger='ranger --choosedir=/tmp/rangerdir; LASTDIR=`cat /tmp/rangerdir`; cd "$LASTDIR"'
-alias r=ranger
+alias run='./a.out'
 
-#Prompt colors and stuff
-Red='\033[01;31m\]'
-Green='\033[01;32m\]'
-Blue='\033[01;34m\]'
-Purple='\033[01;35m\]'
-Cyan='\033[01;36m\]'
-Yellow='\033[01;33m\]'
-White='\033[01;37m\]'
-Reset='\[\033[0m\]'
-
-#Standard & boring PS1
-bracket1="${Green}["
-username="${Cyan}\u"
-at="${Purple}@"
-host="${Yellow}\h"
-bracket2="${Green}]"
-finale="${Reset}\$ "
-
-#PS1="${bracket1}${username}${at}${host}${bracket2}${finale}"
-
-#Cool PS1
-username="${Blue}\u"
-at="${Green}@"
-host2="${Blue}\h"
-path="${Reset}\w"
-bolt="${Yellow}⚡"
-
-#PS1="${username} ${path}${Reset}\n└─${bolt}${Reset} "
-#PS1="[\u@\h \w]\n└─${bolt}${Reset} "
+alias mk="cd ~/;ls"
+alias md="cd ~/Documents; ls"
+alias ml="cd ~/Documents/LaTeX; ls"
+alias mcc="cd ~/Documents/C; ls"
+alias mcp="cd ~/Documents/C++; ls"
+alias my="cd ~/Documents/Python; ls"
+alias mw="cd ~/Downloads; ls"
+alias mm="cd ~/Music"
+alias mp="cd ~/Pictures; ls"
+alias ms="cd ~/School; ls"
+alias mg="cd ~/School/German; ls"

@@ -36,7 +36,7 @@ for_window [instance="sterm"] floating enable
 for_window [instance="sterm"] move scratchpad
 for_window [instance="sterm"] move position center
 for_window [instance="sterm"] resize set 720 480
-exec $term -name sterm -e tmux
+exec --no-startup-id $term -name sterm -e tmux
 
 bindsym $mod+r [instance="sterm"] scratchpad show, move position center
 
@@ -45,7 +45,7 @@ for_window [instance="scalc"] floating enable
 for_window [instance="scalc"] move scratchpad
 for_window [instance="scalc"] move position center
 for_window [instance="scalc"] resize set 720 480
-exec $term -name scalc -fn "xft:TerminessTTF Nerd Font Mono-14"  -e calc -c "-d"
+exec --no-startup-id $term -name scalc -fn "xft:TerminessTTF Nerd Font Mono-14"  -e calc -c "-d"
 
 bindsym $mod+t [instance="scalc"] scratchpad show, move position center
 

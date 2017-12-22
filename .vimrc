@@ -27,9 +27,13 @@ set sessionoptions-=options "Disable recording options when saving sessions, fix
 syntax enable "Enable syntax processing and coloring
 filetype on "Enable filetype processing
 filetype plugin on "Enable filetype plugin
+
+"Colorscheme configuration
+set background=dark "Dark version of solarized colorscheme, just in case
+let g:solarized_termcolors=256 "Neccessary for solarized colorscheme to work properly, dont ask.
 colorscheme molokai "Current colorscheme
 hi Normal ctermbg=none "Prevents colorscheme from changing background (Transparencies sake)
-"hi LineNr ctermbg=none
+hi LineNr ctermbg=none "Same thing but for linenumber gutter
 
 "Plugins
 filetype on "Enable filetype processing

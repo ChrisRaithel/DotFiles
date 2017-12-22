@@ -358,6 +358,8 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
+poll-interval = 2
+
 time-format = %H:%M
 
 format-charging = <animation-charging> <label-charging>

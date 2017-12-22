@@ -5,6 +5,7 @@ URxvt.font: xft:TerminessTTF Nerd Font Mono-12
 URxvt*depth: 32
 URxvt*background: rgba:0000/0000/0200/c800
 URxvt.scrollBar: false
+URxvt.saveLines: 500
+
 *foreground: #ffffff
 *background: #000000
-URxvt.saveLines: 500

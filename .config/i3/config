@@ -53,8 +53,8 @@ bindsym $mod+t [instance="scalc"] scratchpad show, move position center
 bindsym $mod+shift+s exec --no-startup-id i3lock -e -i ~/.config/i3/lock.png
 
 # Scrot screenshoter bind
-#bindsym Print exec scrot -s -e 'mv $f ~/Documents/Screenshots'
-bindsym Print exec deepin-screenshot -s "/home/chris/Documents/Screenshots"
+#bindsym Print exec scrot -s -e 'mv $f $HOME/Documents/Screenshots'
+bindsym Print exec deepin-screenshot -s "$HOME/Pictures/Screenshots"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

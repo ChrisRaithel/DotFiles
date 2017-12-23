@@ -23,10 +23,10 @@ set splitbelow "Make new splits appear below the current window and to the right
 set splitright
 set sessionoptions-=options "Disable recording options when saving sessions, fixes highlighting issues
 
-
 syntax enable "Enable syntax processing and coloring
 filetype on "Enable filetype processing
 filetype plugin on "Enable filetype plugin
+let g:tex_flavor = "latex" "Set default for .tex extension
 
 "Colorscheme configuration
 set background=dark "Dark version of solarized colorscheme, just in case
@@ -34,6 +34,8 @@ let g:solarized_termcolors=256 "Neccessary for solarized colorscheme to work pro
 colorscheme molokai "Current colorscheme
 hi Normal ctermbg=none "Prevents colorscheme from changing background (Transparencies sake)
 hi LineNr ctermbg=none "Same thing but for linenumber gutter
+"hi TabLineFill term=underline cterm=underline ctermfg=15 ctermbg=0
+
 
 "Plugins
 filetype on "Enable filetype processing
@@ -44,13 +46,16 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'kien/ctrlp.vim'
 	Plug 'scrooloose/syntastic'
+	Plug 'godlygeek/tabular'
+	Plug 'easymotion/vim-easymotion'
+	Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
-"Plugin configuration
-"Airline
 
+" Plugin configuration
+
+" Airline
 let g:airline#extensions#tabline#enabled = 0
-
 let g:airline_theme='bubblegum'
 let g:airline_powerline_fonts = 1
 let g:airline_symbols_ascii = 1
@@ -59,6 +64,7 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols = { }
 endif
 
+"Symbols
 let g:airline_skip_empty_sections = 1
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
@@ -70,8 +76,6 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
-
-" airline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -79,11 +83,8 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 
-" Set default for .tex extension
-let g:tex_flavor = "latex"
-
 " Syntastic
-set statusline+=%#warningmsg#
+set statusline+=%#warningmsg# "Shows warning on statusline
 "set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
@@ -92,11 +93,17 @@ let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
+"Filetypes not checked
 let g:syntastic_mode_map = {
 	\ "mode": "active",
 	\ "passive_filetypes": ["tex"] }
 
+"Checker used for C++ files
 let g:sytastic_cpp_compiler="g++"
+
+" Better Whitespace
+autocmd VimEnter * ToggleStripWhitespaceOnSave "Removes trailing whitespace on save
+
 
 "Controversial bindings
 nnoremap E $

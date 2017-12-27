@@ -4,7 +4,7 @@ set number "Line numbering
 set relativenumber "Sets numbering to show number of lines from selected line
 set wildmenu "Autocomplete tab menu for commands
 set ruler "Always show position in document
-set lazyredraw "Screen wont update when using commands or macros which arent typed
+set lazyredraw "Screen wont update when using commands or macros which aren't typed
 set magic "Allows use of regular expressions in search
 set ignorecase "Ignores case in searches
 set smartcase "Matches case if an uppercase character is used in search
@@ -19,9 +19,15 @@ set directory=~/.vim-tmp "Directory to store .swp files (Similar to backups"
 set writebackup "Make backup before writing file
 set clipboard=unnamedplus "Set vim clipboard to system clipboard (For copy and paste)
 set ttimeoutlen=50 "Update vim-airline faster when switching modes
-set splitbelow "Make new splits appear below the current window and to the right
-set splitright
+set splitbelow "Make new splits appear below the current window
+set splitright "and to the right
 set sessionoptions-=options "Disable recording options when saving sessions, fixes highlighting issues
+set spelllang=en "Set spellcheck language to English
+set spellfile=$HOME/.vim/spell/en.utf-8.add "Path to spellcheck file, where ingored spellings are stored
+
+"Disable auto indenting (Until we can get it to cooperate, this is the best
+"solution)
+set noautoindent nocindent nosmartindent indentexpr=
 
 syntax enable "Enable syntax processing and coloring
 filetype on "Enable filetype processing
@@ -30,7 +36,7 @@ let g:tex_flavor = "latex" "Set default for .tex extension
 
 "Colorscheme configuration
 set background=dark "Dark version of solarized colorscheme, just in case
-let g:solarized_termcolors=256 "Neccessary for solarized colorscheme to work properly, dont ask.
+let g:solarized_termcolors=256 "Necessary for solarized colorscheme to work properly, don't ask.
 colorscheme molokai "Current colorscheme
 hi Normal ctermbg=none "Prevents colorscheme from changing background (Transparencies sake)
 hi LineNr ctermbg=none "Same thing but for linenumber gutter
@@ -41,14 +47,14 @@ hi LineNr ctermbg=none "Same thing but for linenumber gutter
 filetype on "Enable filetype processing
 filetype plugin on "Enable filetype plugin
 
-call plug#begin('~/.vim/plugged')
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
-	Plug 'kien/ctrlp.vim'
-	Plug 'scrooloose/syntastic'
-	Plug 'godlygeek/tabular'
-	Plug 'easymotion/vim-easymotion'
-	Plug 'ntpeters/vim-better-whitespace'
+call plug#begin('~/.vim/plugged') "Calls vimplug
+	Plug 'vim-airline/vim-airline' "Nice statusline
+	Plug 'vim-airline/vim-airline-themes' "Themes for vim-airline
+	Plug 'kien/ctrlp.vim' "Fuzzy file finder, buffer searcher, and more
+	Plug 'scrooloose/syntastic' "Syntax checking plugin
+	"Plug 'valloric/youcompleteme' Might want later, but not useful enough at the moment
+	Plug 'godlygeek/tabular' "Automatically arrange lines with spaces/tabs
+	Plug 'ntpeters/vim-better-whitespace' "Highlights trailing whitespace, automatically deletes on write
 call plug#end()
 
 
@@ -115,18 +121,21 @@ let mapleader = "," "Set leader for upcoming commands
 nnoremap <leader>S :source ~/.vimrc<cr>
 "Force write
 nnoremap <leader>w :w<cr>
-"Exit vim if file isnt edited
+"Exit vim if file isn't edited
 nnoremap <leader>q :q<cr>
 "Force exit
 nnoremap <leader>Q :q!<cr>
 "Turn off search highlights from hlsearch
 nnoremap <leader>s :nohlsearch<cr>
 
-"Buncha binds to switching between splits easier
+"Bunch of binds to switching between splits easier
 noremap <C-J> <C-W><C-J>
 noremap <C-K> <C-W><C-K>
 noremap <C-L> <C-W><C-L>
 noremap <C-H> <C-W><C-H>
 
-"Heres one to start control-p in buffer mode, because screw bufferline!
+"Toggle spellcheck mode
+nnoremap <F2> :set spell!<cr>
+
+"Here's one to start control-p in buffer mode
 nnoremap <C-D> :CtrlPBuffer<cr>

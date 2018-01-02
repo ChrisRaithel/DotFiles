@@ -26,8 +26,8 @@ exec --no-startup-id compton --no-fading-openclose --shadow-radius=6 --vsync ope
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%-
 #Also bind brackets for volume
-bindsym $mod+bracketleft exec --no-startup-id amixer -q set Master 5%-
-bindsym $mod+bracketright exec --no-startup-id amixer -q set Master 5%+
+bindsym $mod+minus exec --no-startup-id amixer -q set Master 5%-
+bindsym $mod+shift+equal exec --no-startup-id amixer -q set Master 5%+
 
 
 # i3-gaps setup

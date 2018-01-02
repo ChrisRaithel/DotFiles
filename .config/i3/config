@@ -29,6 +29,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%-
 bindsym $mod+bracketleft exec --no-startup-id amixer -q set Master 5%-
 bindsym $mod+bracketright exec --no-startup-id amixer -q set Master 5%+
 
+
 # i3-gaps setup
 for_window [class="^.*"] border pixel 0
 gaps inner 10
@@ -81,6 +82,10 @@ bindsym $mod+m exec thunderbird
 bindsym $mod+shift+m exec $term -e htop
 # start ncmpcpp
 bindsym $mod+h exec $term -e ncmpcpp
+
+#MPD Binds
+bindsym $mod+backslash exec --no-startup-id mpc -q toggle
+bindsym $mod+shift+backslash exec --no-startup-id mpc -q stop
 
 # change focus
 bindsym $mod+j focus left

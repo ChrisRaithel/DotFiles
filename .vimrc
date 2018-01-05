@@ -5,7 +5,6 @@ set relativenumber "Sets numbering to show number of lines from selected line
 set wildmenu "Autocomplete tab menu for commands
 set ruler "Always show position in document
 set lazyredraw "Screen wont update when using commands or macros which aren't typed
-set magic "Allows use of regular expressions in search
 set ignorecase "Ignores case in searches
 set smartcase "Matches case if an uppercase character is used in search
 set hlsearch "Highlight all search results

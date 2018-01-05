@@ -110,10 +110,6 @@ let g:sytastic_cpp_compiler="g++"
 autocmd VimEnter * ToggleStripWhitespaceOnSave "Removes trailing whitespace on save
 
 
-"Controversial bindings
-nnoremap E $
-nnoremap B 0
-
 let mapleader = "," "Set leader for upcoming commands
 
 "Update current vim session with new config

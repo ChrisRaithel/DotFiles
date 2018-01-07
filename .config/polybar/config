@@ -372,7 +372,7 @@ label-discharging = "%percentage%% %time%"
 
 format-full = <label-full>
 format-full-underline = ${self.format-charging-underline}
-label-full = "FULL %percentage%%"
+label-full = " %percentage%%"
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 

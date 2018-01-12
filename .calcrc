@@ -1,42 +1,50 @@
 define slope(x1,y1,x2,y2) {
 	local backup = config("all");
 	config("mode","frac");
-	print (y2-y1)/(x2-x1);
+
+	local slope = (y2-y1)/(x2-x1);
+
 	config("all", backup);
+
+	return slope;
 };
 
 define iform(x1,y1,x2,y2) {
 	local backup = config("all");
 	config("mode","frac");
+
 	local slope=(y2-y1)/(x2-x1);
 	local intercept=slope*(-x1)+y1;
 	print "Y = " : slope : "x + " : intercept;
+
 	config("all",backup);
-}
+};
 
 define intercept(x1,y1,slope) {
 	local backup = config("all");
 	config("mode","frac");
-	print "Y = " : slope : "x + " : slope*(-x1)+y1;
+
+	local intercept = slope*(-x1)+y1;
+	print "Y = " : slope : "x + " : intercept;
+
 	config("all", backup);
+
+	return intercept;
 };
 
 define midpoint(x1,y1,x2,y2) {
-	local backup = config("all");
-	print (x1+x2)/2;
-	print (y1+y2)/2;
-	config("all", backup);
+	local xmid = (x1+x2)/2;
+	local ymid = (y1+y2)/2;
+
+	return list( xmid, ymid );
 };
 
 define linedistance(x1,y1,x2,y2) {
-	local backup = config("all");
-	print sqrt((x2-x1)^2+(y2-y1)^2);
-	config("all", backup);
+	return sqrt((x2-x1)^2+(y2-y1)^2);
+
 };
 
 define reflect(axis,point) {
-	local backup = config("all");
-	print point-((point-axis)*2);
-	config("all", backup);
+	local ref = ((point-axis)*2);
+	return ref;
 };
-

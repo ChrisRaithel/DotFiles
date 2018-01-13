@@ -1,6 +1,5 @@
 !Config file for Xresources/URxvt
 
-URxvt*termName: rxvt-unicode-256color
 URxvt.font: xft:TerminessTTF Nerd Font Mono-12
 URxvt*depth: 32
 URxvt*background: rgba:0000/0000/0200/c800

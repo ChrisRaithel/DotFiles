@@ -23,12 +23,18 @@ exec --no-startup-id xset -b #Disable beeping for Xorg
 exec --no-startup-id compton --no-fading-openclose --shadow-radius=6 --vsync opengl #Start window compositor, no fading on open or closing windows
 
 # Bind extra audio keys
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%-
-#Also bind brackets for volume
-bindsym $mod+minus exec --no-startup-id amixer -q set Master 5%-
-bindsym $mod+shift+equal exec --no-startup-id amixer -q set Master 5%+
+bindsym XF86AudioMute exec --no-startup-id amixer -q -D pulse sset Master toggle
 
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2%-
+
+#Also bind - and + for volume
+bindsym $mod+minus exec --no-startup-id amixer -q set Master 2%-
+bindsym $mod+shift+equal exec --no-startup-id amixer -q set Master 2%+
+
+# i3lock binds
+bindsym Scroll_Lock exec --no-startup-id i3lock -e -i ~/.config/i3/lock.png
+bindsym $mod+shift+s exec --no-startup-id i3lock -e -i ~/.config/i3/lock.png
 
 # i3-gaps setup
 for_window [class="^.*"] border pixel 0
@@ -52,9 +58,6 @@ for_window [instance="scalc"] resize set 720 480
 exec --no-startup-id $term -name scalc -fn "xft:TerminessTTF Nerd Font Mono-14"  -e calc -c "-d"
 
 bindsym $mod+t [instance="scalc"] scratchpad show, move position center
-
-# i3lock bind
-bindsym $mod+shift+s exec --no-startup-id i3lock -e -i ~/.config/i3/lock.png
 
 # Scrot screenshoter bind
 #bindsym Print exec scrot -s -e 'mv $f $HOME/Documents/Screenshots'

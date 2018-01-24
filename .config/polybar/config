@@ -50,7 +50,7 @@ font-1 = Terminess TTF Nerd Font Mono:pixelsize=20;3
 
 modules-left = i3
 modules-center = mpd
-modules-right = filesystem volume wlan eth battery date
+modules-right = volume wlan eth battery date
 
 tray-position = right
 tray-padding = 0
@@ -324,15 +324,16 @@ format-volume = <ramp-volume> <label-volume>
 label-volume = " %percentage%%"
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+format-muted-prefix = " "
+#format-muted-foreground = ${colors.foreground-alt}
+label-muted = "Muted"
 
 ramp-volume-0=
 ramp-volume-1=
 ramp-volume-2=
 
 format-volume-underline = #e6e200
+format-muted-underline = #e6e200
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55

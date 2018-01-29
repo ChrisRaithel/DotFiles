@@ -36,12 +36,13 @@ PSdollar="\[\033[38;5;231m\]"
 
 PS1="${PSbracket}[${PSuser}\u${PSbracket}@${PSuser}\h ${PSuser}\W${PSbracket}]${PSuser}\$ ${PSclear}"
 
+#Nice shortcuts for changing to most-used folders
 alias mk="cd ~/;ls"
 alias md="cd ~/Documents; ls"
 alias ml="cd ~/Documents/LaTeX; ls"
-alias mcc="cd ~/Documents/C; ls"
-alias mcp="cd ~/Documents/C++; ls"
-alias my="cd ~/Documents/Python; ls"
+alias mcc="cd ~/Documents/Code/C; ls"
+alias mcp="cd ~/Documents/Code/C++; ls"
+alias my="cd ~/Documents/Code/Python; ls"
 alias mw="cd ~/Downloads; ls"
 alias mm="cd ~/Music"
 alias mp="cd ~/Pictures; ls"

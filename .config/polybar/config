@@ -210,8 +210,8 @@ format-online =<label-time>
 
 ;icon-prev = 
 ;icon-stop = 
-;icon-play = 
-;icon-pause = 
+icon-play = 
+icon-pause = 
 ;icon-next = 
 
 label-song = "%artist% - %title%  "
@@ -302,7 +302,7 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 4
+interval = 1
 
 date = "%m-%d-%Y"
 date-alt = "%m-%d-%Y"

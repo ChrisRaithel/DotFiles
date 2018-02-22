@@ -27,7 +27,6 @@ bindsym XF86AudioMute exec --no-startup-id amixer -q -D pulse sset Master toggle
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2%-
-
 #Also bind - and + for volume
 bindsym $mod+minus exec --no-startup-id amixer -q set Master 2%-
 bindsym $mod+shift+equal exec --no-startup-id amixer -q set Master 2%+
@@ -38,7 +37,6 @@ bindsym $mod+bracketright exec --no-startup-id mpc -q next
 
 # i3lock binds
 bindsym Scroll_Lock exec --no-startup-id i3lock -e -i ~/.config/i3/lock.png
-bindsym $mod+shift+s exec --no-startup-id i3lock -e -i ~/.config/i3/lock.png
 
 # i3-gaps setup
 for_window [class="^.*"] border pixel 0

@@ -1,10 +1,14 @@
 !Config file for Xresources/URxvt
 
-URxvt.font: xft:TerminessTTF Nerd Font Mono-12
+URxvt.font: xft:TerminessTTF Nerd Font Mono:size=12
 URxvt*depth: 32
 URxvt*background: rgba:0000/0000/0200/c800
 URxvt.scrollBar: false
 URxvt.saveLines: 500
+
+URxvt.perl-ext-common: resize-font
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 *foreground: #ffffff
 *background: #000000

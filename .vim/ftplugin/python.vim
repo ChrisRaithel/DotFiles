@@ -1,1 +1,1 @@
-nnoremap <leader>c :w<cr> :!clear && python "%"<cr>
+nnoremap <leader>c :!clear && python "%"<cr>

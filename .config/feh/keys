@@ -4,10 +4,10 @@ menu_child	l
 menu_down	j
 menu_up		k
 
-scroll_left	h
+scroll_left		h
 scroll_right	l
-scroll_up	k
-scroll_down	j
+scroll_up		k
+scroll_down		j
 
 scroll_left_page	C-h
 scroll_right_page	C-l
@@ -20,8 +20,8 @@ toggle_pointer		o
 zoom_in		plus
 zoom_out	minus
 
-next_img	J greater
-prev_img	K less
+next_img	J Right Down greater
+prev_img	K Left Up less
 
 reload_image	r
 size_to_image	w

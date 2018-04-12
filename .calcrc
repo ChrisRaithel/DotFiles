@@ -42,3 +42,7 @@ define midpoint(x1,y1,x2,y2) {
 define linedistance(x1,y1,x2,y2) {
 	return sqrt((x2-x1)^2+(y2-y1)^2);
 };
+
+define arclen(radius,degree) {
+	return 2 * radius * (degree/360);
+}

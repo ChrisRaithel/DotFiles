@@ -20,8 +20,8 @@ toggle_pointer		o
 zoom_in		plus
 zoom_out	minus
 
-next_img	J Right Down greater
-prev_img	K Left Up less
+prev_img	J Left Up less
+next_img	K Right Down greater
 
 reload_image	r
 size_to_image	w

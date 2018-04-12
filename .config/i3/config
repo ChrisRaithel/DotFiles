@@ -5,38 +5,39 @@ set $term urxvt
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
+# Unused, since polybar uses different font and window titles are disabled
 #font pango: Monospace 8
 font pango: FontAwesome 7.5
 
 # Background image
 exec --no-startup-id feh --bg-fill ~/.config/i3/background.jpg
 
-# Polybar status bar
-exec_always --no-startup-id sh ~/.config/polybar/launch.sh
-
-# Network manager applet
-exec --no-startup-id nm-applet
-
 # Background processes
+exec_always --no-startup-id sh ~/.config/polybar/launch.sh #polybar status bar
+exec --no-startup-id nm-applet #Network manager applet
+exec --no-startup-id dunst -font "Monospace 9.5" -lb "#ffffff" -nb "#ffffff" -cb "#ffffff" -lf "#000000" -nf "#000000" -cf "#dd0000" #notification daemon
 exec --no-startup-id mpd ~/.config/mpd/mpd.conf #Mpd music player
 exec --no-startup-id xset -b #Disable beeping for Xorg
 exec --no-startup-id compton --no-fading-openclose --shadow-radius=6 --vsync opengl #Start window compositor, no fading on open or closing windows
+exec --no-startup-id udiskie --tray --no-file-manager #Removeable disk automounter
 
 # Bind extra audio keys
 bindsym XF86AudioMute exec --no-startup-id amixer -q -D pulse sset Master toggle
-
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2%-
 #Also bind - and + for volume
 bindsym $mod+minus exec --no-startup-id amixer -q set Master 2%-
 bindsym $mod+shift+equal exec --no-startup-id amixer -q set Master 2%+
 
-#Binds for seeking through music playlist
-bindsym $mod+bracketleft exec --no-startup-id mpc -q prev
-bindsym $mod+bracketright exec --no-startup-id mpc -q next
+#Binds for seeking through, pausing, and stopping music
+bindsym $mod+bracketleft exec --no-startup-id mpc -q prev #previous
+bindsym $mod+bracketright exec --no-startup-id mpc -q next #next
+bindsym $mod+backslash exec --no-startup-id mpc -q toggle #pause/play
+bindsym $mod+shift+backslash exec --no-startup-id mpc -q stop #stop
 
 # i3lock binds
 bindsym Scroll_Lock exec --no-startup-id i3lock -e -i ~/.config/i3/lock.png
+bindsym XF86ScreenSaver exec --no-startup-id i3lock -e -i ~/.config/i3/lock.png
 
 # i3-gaps setup
 for_window [class="^.*"] border pixel 0
@@ -61,7 +62,7 @@ exec --no-startup-id $term -name scalc -fn "xft:TerminessTTF Nerd Font Mono-14" 
 
 bindsym $mod+t [instance="scalc"] scratchpad show, move position center
 
-# Scrot screenshoter bind
+# Screenshot bind
 #bindsym Print exec scrot -s -e 'mv $f $HOME/Documents/Screenshots'
 bindsym Print exec deepin-screenshot -s "$HOME/Pictures/Screenshots"
 
@@ -74,9 +75,8 @@ bindsym $mod+Return exec $term
 #kill focused window
 bindsym $mod+q kill
 
-# Start rofi (dmenu replacement), used for gimp, pinball, etc.
+# Start rofi (dmenu replacement)
 bindsym $mod+s exec rofi -show run
-
 # start firefox
 bindsym $mod+b exec firefox
 # start ranger
@@ -87,10 +87,6 @@ bindsym $mod+m exec thunderbird
 bindsym $mod+shift+m exec $term -e htop
 # start ncmpcpp
 bindsym $mod+h exec $term -e ncmpcpp
-
-#MPD Binds
-bindsym $mod+backslash exec --no-startup-id mpc -q toggle
-bindsym $mod+shift+backslash exec --no-startup-id mpc -q stop
 
 # change focus
 bindsym $mod+j focus left
@@ -106,7 +102,6 @@ bindsym $mod+Shift+semicolon move right
 
 # split in horizontal orientation
 bindsym $mod+c split horizontal
-
 # split in vertical orientation
 bindsym $mod+v split vertical
 
@@ -123,12 +118,6 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-#bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1

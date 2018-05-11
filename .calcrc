@@ -17,9 +17,7 @@ define iform(x1,y1,x2,y2) {
 	local intercept=slope*(-x1)+y1;
 	print "Y = " : slope : "x + " : intercept;
 
-	config("all",backup);
-};
-
+	config("all",backup); };
 define intercept(x1,y1,slope) {
 	local backup = config("all");
 	config("mode","frac");
@@ -45,4 +43,22 @@ define linedistance(x1,y1,x2,y2) {
 
 define arclen(radius,degree) {
 	return 2 * radius * (degree/360);
+}
+
+define quadratic(a,b,c) {
+	local pos = (-b + sqrt(b^2-4*a*c)) / (2*a);
+	local neg = (-b - sqrt(b^2-4*a*c)) / (2*a);
+	return list(pos,neg);
+}
+
+define quaddisc(a,b,c) {
+	return (b^2-4*a*c);
+}
+
+define permut(sum,diff) {
+	return (sum!)/(sum-diff)!;
+}
+
+define combf(sum,diff) {
+	return (sum!)/(diff!*(sum-diff)!);
 }

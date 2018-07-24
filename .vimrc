@@ -51,9 +51,10 @@ call plug#begin('~/.vim/plugged') "Calls vimplug
 	Plug 'vim-airline/vim-airline-themes' "Themes for vim-airline
 	Plug 'kien/ctrlp.vim' "Fuzzy file finder, buffer searcher, and more
 	Plug 'scrooloose/syntastic' "Syntax checking plugin
-	"Plug 'valloric/youcompleteme' Might want later, but not useful enough at the moment
+	Plug 'valloric/youcompleteme' "Might want later, but not useful enough at the moment
 	Plug 'godlygeek/tabular' "Automatically arrange lines with spaces/tabs
 	Plug 'ntpeters/vim-better-whitespace' "Highlights trailing whitespace, automatically deletes on write
+	Plug 'scrooloose/nerdtree' "File explorer
 call plug#end()
 
 
@@ -122,6 +123,9 @@ nnoremap <leader>q :q<cr>
 nnoremap <leader>Q :q!<cr>
 "Turn off search highlights from hlsearch
 nnoremap <leader>s :nohlsearch<cr>
+"Next/previous buffer
+nnoremap <leader>n :bnext<cr>
+nnoremap <leader>N :bNext<cr>
 
 "Bunch of binds to switching between splits easier
 noremap <C-J> <C-W><C-J>
@@ -134,3 +138,5 @@ nnoremap <F2> :set spell!<cr>
 
 "Here's one to start control-p in buffer mode
 nnoremap <C-D> :CtrlPBuffer<cr>
+"NERDTree
+nnoremap <C-N> :NERDTree<cr>

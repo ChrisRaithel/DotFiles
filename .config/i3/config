@@ -84,10 +84,14 @@ bindsym Print exec deepin-screenshot -s "$HOME/Pictures/Screenshots"
 # Kill focused window
 bindsym $mod+q kill
 
+# Connect to headset
+bindsym $mod+shift+bracketright exec --no-startup-id bluetoothctl connect 00:18:09:B6:7D:A4
+
 # Program shortcuts
 bindsym $mod+Return exec $term #Start terminal
 bindsym $mod+s exec rofi -show run #Start rofi (dmenu replacement)
 bindsym $mod+b exec firefox #Start Firefox
+bindsym $mod+shift+b exec chromium #Start chromium
 bindsym $mod+n exec $term -e ranger #Start ranger
 bindsym $mod+shift+n exec pavucontrol #Start Pulseaudio control
 bindsym $mod+m exec thunderbird #Start Thunderbird email

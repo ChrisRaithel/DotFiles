@@ -43,5 +43,3 @@ alias mm="cd ~/Music"
 alias mp="cd ~/Pictures; ls"
 alias ms="cd ~/School; ls"
 alias mg="cd ~/School/German; ls"
-
-source ~/Documents/Code/germanfile.sh

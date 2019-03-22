@@ -51,9 +51,9 @@ call plug#begin('~/.vim/plugged') "Calls vimplug
 	Plug 'vim-airline/vim-airline-themes' "Themes for vim-airline
 	Plug 'kien/ctrlp.vim' "Fuzzy file finder, buffer searcher, and more
 	Plug 'scrooloose/syntastic' "Syntax checking plugin
-	Plug 'valloric/youcompleteme' "Might want later, but not useful enough at the moment
+	"Plug 'valloric/youcompleteme' "Might want later, but not useful enough at the moment
 	Plug 'godlygeek/tabular' "Automatically arrange lines with spaces/tabs
-	Plug 'ntpeters/vim-better-whitespace' "Highlights trailing whitespace, automatically deletes on write
+	"Plug 'ntpeters/vim-better-whitespace' "Highlights trailing whitespace, automatically deletes on write
 	Plug 'scrooloose/nerdtree' "File explorer
 call plug#end()
 
@@ -108,7 +108,7 @@ let g:syntastic_mode_map = {
 let g:sytastic_cpp_compiler="g++"
 
 " Better Whitespace
-autocmd VimEnter * ToggleStripWhitespaceOnSave "Removes trailing whitespace on save
+"autocmd VimEnter * ToggleStripWhitespaceOnSave "Removes trailing whitespace on save
 
 
 let mapleader = "," "Set leader for upcoming commands

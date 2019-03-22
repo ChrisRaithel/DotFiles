@@ -1,5 +1,4 @@
-#!/bin/bash
-#!usr/bin/env sh
+#!/usr/bin/env bash
 
 # Terminate already running instances
 killall -q polybar
@@ -9,5 +8,3 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 0.5; done
 
 # Launch bar
 polybar mybar &
-
-echo "The bar is launched, my dude"
